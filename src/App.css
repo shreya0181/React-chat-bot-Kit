@@ -13,6 +13,10 @@
   }
 }
 
+.ChatBot{
+  float: right;
+  margin-bottom:0 ;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
