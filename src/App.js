@@ -50,7 +50,7 @@ class App extends Component  {
   render() {
     
  return (
-    <Provider >
+ 
     <div className="App">
       <div className="ChatBot">
         <ChatBot config={config} messageParser= {MessageParser} actionProvider={ActionProvider} steps ={steps}/>
@@ -60,7 +60,7 @@ class App extends Component  {
           {this.state.name}
         </div>
     </div>
-    </Provider>
+ 
  );
   }
 }

@@ -10,10 +10,20 @@ class ActionProvider {
 
    
      greet= ()=> {
-         const message = this.createChatBotMessage("Enter Your Name!..");
+         const message = this.createChatBotMessage("Hello Friend");
          this.addMessageToState(message);
         
     }
+    handleJavascriptQuiz = () => {
+        const message = this.createChatBotMessage(
+          "Fantastic. Here is your quiz. Good luck!",
+          {
+            widget: "javascriptQuiz",
+          }
+        );
+    
+        this.addMessageToState(message);
+      };
     addMessageToState =(message)=>{
         this.setState(prevState=>({
             ...prevState,

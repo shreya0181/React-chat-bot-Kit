@@ -1,28 +1,25 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React from "react";
+
 import "./Side.css";
-const Side = (props)=>{
-   console.log(props);
-   
-   const [inputV, setInput] = useState('');
 
+const Side = (props) => {
+  const options = [
+    {
+      text: "Javascript",
+      handler: props.actionProvider.handleJavascriptQuiz,
+      id: 1,
+    },
+    { text: "Python", handler: () => {}, id: 2 },
+    { text: "Golang", handler: () => {}, id: 3 },
+  ];
 
-  
-   useEffect(() => alert(inputV), [inputV]);
-   const changeValue = event => setInput(event.target.value);
+  const buttonsMarkup = options.map((option) => (
+    <button key={option.id} onClick={option.handler} className="option-button">
+      {option.text}
+    </button>
+  ));
 
+  return <div className="options-container">{buttonsMarkup}</div>;
+};
 
-
-    return (<div className="Side">
-        <div>
-        <input value={inputV} onChange={changeValue} />;
-               
-           <div>
-               {inputV}
-           </div>
-        </div>
-    </div>);
-}
-
-
-export default  Side;
+export default Side;
